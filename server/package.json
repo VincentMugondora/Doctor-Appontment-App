@@ -7,7 +7,7 @@
     "start": "node server.js",
     "server": "nodemon server.js"
   },
-  "author": "vincent",
+  "author": "Vincent Mugondora",
   "license": "ISC",
   "description": "",
   "dependencies": {

@@ -56,9 +56,9 @@ const loginController = async(req, res) => {
 
     // if there is user and password then generate token for user to secure our app
 
-    const token = jwt.sign({id:user._id}, )
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET,{expireIn: "1d"});
 
-    res.send({ message: "Login successful", success: true, user });
+    res.status(200).send({ message: "Login successful", success: true, token });
   } catch (error) {
     console.log(error)
     res.status(500).send({message: `Error in login controller ${error.message}`})

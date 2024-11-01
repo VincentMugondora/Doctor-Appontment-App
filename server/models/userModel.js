@@ -23,4 +23,4 @@ const userSchema = new mongoose.Schema({
 
 const userModel = mongoose.model("users", userSchema);
 
-MediaSourceHandle.exports = userModel;
+module.exports = userModel;

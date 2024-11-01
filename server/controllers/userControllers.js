@@ -5,7 +5,7 @@ const bycrpt = require("bcryptjs");
 const loginController = () => {};
 
 // Register controller
-const registerController = async () => {
+const registerController = async (req, res) => {
   try {
     const existingUser = await userModel.findOne({ email: req.body.email });
     if (existingUser) {

@@ -1,5 +1,7 @@
-import "../styles/RegisterStyles.css"
+import "../styles/RegisterStyles.css";
 import { Form, Input } from "antd";
+import { Link } from "react-router-dom";
+
 
 const Register = () => {
   const onFinishHandler = (values) => {
@@ -9,8 +11,12 @@ const Register = () => {
   return (
     <>
       <div className="form-container">
-        <Form layout="vertical" onFinish={onFinishHandler}>
-          <h1>Register Form</h1>
+        <Form
+          className="register-form"
+          layout="vertical"
+          onFinish={onFinishHandler}
+        >
+          <h3 className="text-center">Register Form</h3>
 
           {/* name input */}
           <Form.Item label="Name" name="name">
@@ -27,8 +33,15 @@ const Register = () => {
             <Input type="password" required />
           </Form.Item>
 
+          {/* sign-in link */}
+          <Link to="/login" className="m-2">
+            Already registered? Go for Login
+          </Link>
+
           {/* button */}
-          <button className="btn btn-primary" type="submit">Register</button>
+          <button className="btn btn-primary" type="submit">
+            Register
+          </button>
         </Form>
       </div>
     </>
